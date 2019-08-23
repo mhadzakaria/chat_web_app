@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @chat.user_id %>
+</p>
+
+<p>
+  <strong>Receiver:</strong>
+  <%= @chat.receiver_id %>
+</p>
+
+<p>
+  <strong>Firebase key:</strong>
+  <%= @chat.firebase_key %>
+</p>
+
+<%= link_to 'Edit', edit_chat_path(@chat) %> |
+<%= link_to 'Back', chats_path %>
