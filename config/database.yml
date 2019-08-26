@@ -9,13 +9,13 @@ default: &default
   adapter: postgresql
   encoding: unicode
   host: localhost
-  pool: 5
-  username: postgres
-  password: postgres
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
   <<: *default
   database: chat_web_app_dev
+  username: postgres
+  password: postgres
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -23,7 +23,11 @@ development:
 test:
   <<: *default
   database: chat_web_app_test
+  username: postgres
+  password: postgres
 
 production:
   <<: *default
   database: chat_web_app_prod
+  username: chat_web_app
+  password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>
