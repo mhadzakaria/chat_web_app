@@ -10,6 +10,7 @@ class ChatsController < ApplicationController
   # GET /chats/1
   # GET /chats/1.json
   def show
+    @current_user = {id: 2, email: "indra@nineod.com"}
   end
 
   # GET /chats/new

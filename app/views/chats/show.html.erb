@@ -183,17 +183,18 @@
   var database = firebase.database();
   var refDb = database.ref('chats/job_request-11-10-903461171884c642d5f2/messages/')
 
-  $('#adding').on('click', function() {
+  $('.msg_send_btn').on('click', function() {
     refDb.push({
-      id: '<%#= current_user.id %>',
-      name: '<%#= current_user.email %>',
-      text: $('#value-msg').val(),
-      time: "<%#= Time.now.strftime('%D %H:%M:%S') %>",
+      id: '<%= @current_user[:id] %>',
+      name: '<%= @current_user[:email] %>',
+      text: $('.write_msg').val(),
+      time: "<%= Time.now.strftime('%D %H:%M:%S') %>",
       read: false
     })
   })
 
   const updateMessages = data => {
+    console.log(data.val(), '<%= @current_user[:email] %>')
     var {id, name, text, time, read} = data.val()
     if (read) {
       read = '';
@@ -201,13 +202,30 @@
       read = 'U';
     }
 
-    if (id != ''<%#= current_user.id %>) {
-      firebase.database().ref().child('<%#= @chat_session.provider_url %>/'+ data.key).update({read: true})
-      read = ''
+    if (id != '2') {
+      // firebase.database().ref().child('<%#= @chat_session.provider_url %>/'+ data.key).update({read: true})
+      // read = ''
     }
 
-    name = (name == '<%#= current_user.email %>') ? 'You' : name
-    $('#messages').append('<p id="'+ data.key +'""><span>'+name+': </span><span>"'+text+'"</span><span class="read_status">'+ read +'</span></p>')
+    let msgBlock = ''
+    if (name == '<%= @current_user[:email] %>') {
+      msgBlock += '<div class="outgoing_msg">';
+      msgBlock += '<div class="sent_msg">';
+      msgBlock += '<p>'+ text +'</p>';
+      msgBlock += '<span class="time_date">'+ time +'</span> </div>';
+      msgBlock += '</div>';
+    } else {
+      msgBlock += '<div class="incoming_msg">';
+      msgBlock += '<div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>';
+      msgBlock += '<div class="received_msg">';
+      msgBlock += '<div class="received_withd_msg">';
+      msgBlock += '<p>'+ text +'</p>';
+      msgBlock += '<span class="time_date">'+ time +'</span> </div>';
+      msgBlock += '</div>';
+      msgBlock += '</div>';
+    };
+
+    $('.msg_history').append(msgBlock)
     $('#value-msg').val('')
   }
 
