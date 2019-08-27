@@ -96,7 +96,7 @@
   </div>
 </div>
 
-<div id="message-form" data-firebase='<%= raw({ apiKey: Rails.application.secrets.firebase_apiKey, authDomain: Rails.application.secrets.firebase_authDomain, databaseURL: Rails.application.secrets.firebase_databaseURL, projectId: Rails.application.secrets.firebase_projectId, storageBucket: Rails.application.secrets.firebase_storageBucket, messagingSenderId: Rails.application.secrets.firebase_messagingSenderId }.to_json) %>'>
+<div id="message-form" data-firebase='<%= raw({ apiKey: ENV["firebase_apiKey"], authDomain: ENV["firebase_authDomain"], databaseURL: ENV["firebase_databaseURL"], projectId: ENV["firebase_projectId"], storageBucket: ENV["firebase_storageBucket"], messagingSenderId: ENV["firebase_messagingSenderId"] }.to_json) %>'>
   <% if true#!@chat_session.status.eql?('closed') %>
     <input id="value-msg"></input>
     <button id="adding">Add</button>
