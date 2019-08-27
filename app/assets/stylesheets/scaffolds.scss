@@ -1,10 +1,12 @@
 body {
-  background-color: #fff;
-  color: #333;
-  margin: 33px;
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
+  background-color: #00aecc;
+  font-size: 14px;
+  font-family: Helvetica Neue,Arial,Helvetica,sans-serif;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
 }
 
 p, ol, ul, td {

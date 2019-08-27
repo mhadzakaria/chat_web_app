@@ -18,97 +18,22 @@
 <%= link_to 'Edit', edit_chat_path(@chat) %> |
 <%= link_to 'Back', chats_path %>
  -->
-<div class="container">
+<div id="root" style="height: 100%; position: relative;">
+  <div class="layout" style="display: flex; flex-direction: column; height: 100%; flex-grow: 1; position: relative;">
+    <!-- <div class="body" style=""> -->
+      <!-- <div class="body_wrapper" style="position: absolute; top: 0; left: 0; bottom: 0; right: 0; height: 100%; display: flex; flex-direction: column; margin-right: 0;"> -->
+        <!-- <div class="body-canvas" style="position: relative; flex-grow: 1;"> -->
+          <div class="bodylist" style="overflow-x: auto; overflow-y: hidden; position: absolute; top: 0; bottom: 0;">
+            <div class="lists" style="padding: 10px;height: 100%; display: inline-block;box-sizing: border-box; display: inline-flex;flex-direction: column;background-color: #dfe3e6;white-space: normal;">
+<!-- <div class="container"> -->
   <!-- <h3 class=" text-center">Messaging</h3> -->
-  <div class="messaging">
-    <div class="inbox_msg">
-      <!-- <div class="inbox_people">
-        <div class="headind_srch">
-          <div class="recent_heading">
-            <h4>Recent</h4>
-          </div>
-          <div class="srch_bar">
-            <div class="stylish-input-group">
-              <input type="text" class="search-bar"  placeholder="Search" >
-              <span class="input-group-addon">
-              <button type="button"> <i class="fa fa-search" aria-hidden="true"></i> </button>
-              </span> </div>
-          </div>
+  <!-- <div class="messaging"> -->
+    <!-- <div class="inbox_msg"> -->
+      <!-- <div style="max-height: 8%"></div> -->
+      <!-- <div class="mesgs"> -->
+        <div style="position: relative;">
+          <h2>21212</h2>
         </div>
-        <div class="inbox_chat">
-          <div class="chat_list active_chat">
-            <div class="chat_people">
-              <div class="chat_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
-              <div class="chat_ib">
-                <h5>Sunil Rajput <span class="chat_date">Dec 25</span></h5>
-                <p>Test, which is a new approach to have all solutions 
-                  astrology under one roof.</p>
-              </div>
-            </div>
-          </div>
-          <div class="chat_list">
-            <div class="chat_people">
-              <div class="chat_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
-              <div class="chat_ib">
-                <h5>Sunil Rajput <span class="chat_date">Dec 25</span></h5>
-                <p>Test, which is a new approach to have all solutions 
-                  astrology under one roof.</p>
-              </div>
-            </div>
-          </div>
-          <div class="chat_list">
-            <div class="chat_people">
-              <div class="chat_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
-              <div class="chat_ib">
-                <h5>Sunil Rajput <span class="chat_date">Dec 25</span></h5>
-                <p>Test, which is a new approach to have all solutions 
-                  astrology under one roof.</p>
-              </div>
-            </div>
-          </div>
-          <div class="chat_list">
-            <div class="chat_people">
-              <div class="chat_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
-              <div class="chat_ib">
-                <h5>Sunil Rajput <span class="chat_date">Dec 25</span></h5>
-                <p>Test, which is a new approach to have all solutions 
-                  astrology under one roof.</p>
-              </div>
-            </div>
-          </div>
-          <div class="chat_list">
-            <div class="chat_people">
-              <div class="chat_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
-              <div class="chat_ib">
-                <h5>Sunil Rajput <span class="chat_date">Dec 25</span></h5>
-                <p>Test, which is a new approach to have all solutions 
-                  astrology under one roof.</p>
-              </div>
-            </div>
-          </div>
-          <div class="chat_list">
-            <div class="chat_people">
-              <div class="chat_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
-              <div class="chat_ib">
-                <h5>Sunil Rajput <span class="chat_date">Dec 25</span></h5>
-                <p>Test, which is a new approach to have all solutions 
-                  astrology under one roof.</p>
-              </div>
-            </div>
-          </div>
-          <div class="chat_list">
-            <div class="chat_people">
-              <div class="chat_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
-              <div class="chat_ib">
-                <h5>Sunil Rajput <span class="chat_date">Dec 25</span></h5>
-                <p>Test, which is a new approach to have all solutions 
-                  astrology under one roof.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> -->
-      <div class="mesgs">
         <div class="msg_history">
           <div class="incoming_msg">
             <div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
@@ -155,12 +80,19 @@
             <button class="msg_send_btn" type="button"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
           </div>
         </div>
-      </div>
-    </div>
+      <!-- </div> -->
+    <!-- </div> -->
     
     
-    <p class="text-center top_spac"> Design by <a target="_blank" href="#">Sunil Rajput</a></p>
+    <!-- <p class="text-center top_spac"> Design by <a target="_blank" href="#">Sunil Rajput</a></p> -->
     
+  <!-- </div> -->
+<!-- </div> -->
+            </div>
+          </div>
+        <!-- </div> -->
+      <!-- </div> -->
+    <!-- </div> -->
   </div>
 </div>
 <div id="message-form" data-firebase='<%= raw({ apiKey: Rails.application.secrets.firebase_apiKey, authDomain: Rails.application.secrets.firebase_authDomain, databaseURL: Rails.application.secrets.firebase_databaseURL, projectId: Rails.application.secrets.firebase_projectId, storageBucket: Rails.application.secrets.firebase_storageBucket, messagingSenderId: Rails.application.secrets.firebase_messagingSenderId }.to_json) %>'>
@@ -169,9 +101,9 @@
     <button id="adding">Add</button>
   <% end %>
 </div>
-<strong>Messages:</strong>
+<!-- <strong>Messages:</strong>
 <div id="messages"></div>
-
+ -->
 <script>
   function firebaseConfig() {
     var config = $('#message-form').data('firebase');
